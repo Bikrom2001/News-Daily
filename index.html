@@ -46,7 +46,7 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent2">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul id="Category-container" class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                       </li>
@@ -74,7 +74,6 @@
                       <li class="nav-item">
                         <a class="nav-link" href="#">All news</a>
                       </li>
-
                     </ul>
                   </div>
                 </div>
@@ -137,7 +136,7 @@
                             Fancy some shopping deals? Check out these amazing sales: Zara Black Friday, ASOS Black Friday, Missoma Black
                             Friday and Gucci Black Friday...</p>
                          <div class="row align-items-center">
-                            <div class="col-lg-3">
+                            <div class="col-6 col-lg-3 mt-3">
                                 <div class="d-flex gap-3 align-items-center">
                                     <img style="width: 50px; height: 50px;" class="rounded-circle" src="pexels-nhật-dev-1572348.jpg" alt="">
                                     <div>
@@ -146,13 +145,13 @@
                                     </div>
                                 </div>
                               </div>
-                              <div class="col-lg-3">
+                              <div class="col-6 col-lg-3 mt-3">
                                 <div class="d-flex align-items-center gap-3">
                                     <i class="fa-regular fa-eye"></i>
                                     <p class="mb-0 fw-bold">1.5M</p>
                                 </div>
                               </div>
-                              <div class="col-lg-3">
+                              <div class="col-6 col-lg-3 mt-3">
                                 <div>
                                     <i class="fa-solid fa-star-half-stroke"></i>
                                     <i class="fa-regular fa-star"></i>
@@ -161,9 +160,9 @@
                                     <i class="fa-regular fa-star"></i>
                                 </div>
                               </div>
-                              <div class="col-lg-3">
+                              <div class="col-6 col-lg-3 mt-3">
                                 <div>
-                                    <i style="cursor: pointer;" class="fa-solid fa-arrow-right text-primary"></i>
+                                    <i style="cursor: pointer;" class="fa-solid fa-arrow-right text-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
                                 </div>
                               </div>
                          </div>
@@ -187,10 +186,35 @@
     </footer>
 
 
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
     
 
 
     <!-- bootstrap cdn -->
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
