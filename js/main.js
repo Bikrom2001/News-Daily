@@ -96,9 +96,25 @@ const modalNewsDetail = (NewsDetails) => {
     console.log(NewsDetails);
 
     const NewsDetailContainer = document.getElementById('modal-container');
+    NewsDetailContainer.innerHTML = ``;
     const newsDetailDiv = document.createElement('div');
-    
+    newsDetailDiv.classList.add('col');
+    newsDetailDiv.innerHTML = `
 
+    <div class="card">
+      <img src="${NewsDetails.image_url}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${NewsDetails.title}</h5>
+        <p class="card-text text-secondary">${NewsDetails.details ? NewsDetails.details.slice(0, 135) : '...'}</p>
+      </div>
+      <div class="card-footer">
+          <small class=" fw-semibold text-black">${NewsDetails.author.name ? NewsDetails.author.name : "Not Found Author"}</small>
+          <small class="text-muted text-end"> / ${NewsDetails.author.published_date ? NewsDetails.author.published_date : 'Not Found Date'}</small>
+        </div>
+    </div>
+    
+    `;
+    NewsDetailContainer.appendChild(newsDetailDiv);
 
 }
 
