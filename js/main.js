@@ -1,8 +1,8 @@
 const loadData = () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`
     fetch(url)
-    .then(res => res.json())
-    .then(data => displayLoadData(data.data.news_category))
+        .then(res => res.json())
+        .then(data => displayLoadData(data.data.news_category))
 }
 
 const displayLoadData = categorys => {
@@ -21,17 +21,17 @@ const displayLoadData = categorys => {
 
 
 const loadAllCategory = categoryId => {
-   const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`
-   fetch(url)
-   .then(res => res.json())
-   .then(data => displayLoadCategory(data.data))
+    const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayLoadCategory(data.data))
 }
 
 const displayLoadCategory = CategoryData => {
     const allCategoryContainer = document.getElementById('all-Category');
     allCategoryContainer.innerHTML = ``;
     CategoryData.forEach(allCategory => {
-        console.log(allCategory);
+        // console.log(allCategory);
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('card', 'mb-3', 'shadow-sm');
         cardDiv.innerHTML = `
@@ -71,7 +71,7 @@ const displayLoadCategory = CategoryData => {
                   </div>
                   <div class="col-6 col-lg-2 mt-3">
                     <div>
-                        <i style="cursor: pointer;" class="fa-solid fa-arrow-right text-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                        <i onclick="loadModalData('${allCategory._id}')" style="cursor: pointer;" class="fa-solid fa-arrow-right text-primary" data-bs-toggle="modal" data-bs-target="#NewsDetailModal"></i>
                     </div>
                   </div>
              </div>
@@ -82,6 +82,24 @@ const displayLoadCategory = CategoryData => {
         `;
         allCategoryContainer.appendChild(cardDiv);
     })
+}
+
+
+const loadModalData = NewsDetailId => {
+    const url = `https://openapi.programming-hero.com/api/news/${NewsDetailId}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => modalNewsDetail(data.data[0]))
+}
+
+const modalNewsDetail = (NewsDetails) => {
+    console.log(NewsDetails);
+
+    const NewsDetailContainer = document.getElementById('modal-container');
+    const newsDetailDiv = document.createElement('div');
+    
+
+
 }
 
 loadData();
