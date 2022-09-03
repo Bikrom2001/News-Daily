@@ -37,6 +37,11 @@ const displayLoadCategory = CategoryData => {
   const categoryItems = document.getElementById('category-items');
   categoryItems.innerText = '';
   categoryItems.innerText = `${CategoryData.length}`;
+  // sort data
+  CategoryData.sort(function (a, b) {
+    return b.total_view - a.total_view;
+  });
+  
   CategoryData.forEach(allCategory => {
     // console.log(allCategory);
     const cardDiv = document.createElement('div');
