@@ -13,7 +13,7 @@ const displayLoadData = categorys => {
     licategory.classList.add('nav-item');
     licategory.innerHTML = `
         
-        <a onclick="loadAllCategory('${category.category_id}')" class="nav-link active" aria-current="page" href="#">${category.category_name}</a>
+        <a onclick="loadAllCategory('${category.category_id}')" class="nav-link text-secondary fw-semibold" aria-current="page" href="#">${category.category_name}</a>
         `;
     categoryContainer.appendChild(licategory);
   })

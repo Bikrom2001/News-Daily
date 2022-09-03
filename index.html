@@ -1,145 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News-Daily</title>
-    <!-- font awsome -->
-    <script src="https://kit.fontawesome.com/ec6584ee5b.js" crossorigin="anonymous"></script>
-    <!-- bootstrap cdn -->
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News-Daily</title>
+  <link rel="icon" type="image/x-icon" href="icons/fav-icons.png">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- font awsome -->
+  <script src="https://kit.fontawesome.com/ec6584ee5b.js" crossorigin="anonymous"></script>
+  <!-- bootstrap cdn -->
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-light">
 
-    <!-- header secation -->
-    <header>
-        <nav class="navbar navbar-expand-lg bg-light border-bottom">
-            <div class="container">
-              <a class="navbar-brand" href="#"><span class="btn btn-primary">News</span> Daily</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">News</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </header>
-
-    <main class="pb-5">
-        <!-- category secation -->
-        <section>
-            <nav class="navbar navbar-expand-lg bg-light">
-                <div class="container">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent2">
-                    <ul id="Category-container" class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-        </section>
-
-        <!-- category Entertainment -->
-        <section class="mb-5">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="bg-white rounded-1 p-3 ">
-                        <p class="mb-0 fw-semibold"><span id="category-items"></span> items found for category Entertainment</p>
-                    </div>
-                </div>
-            </div>
+  <!-- header secation -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light border-bottom">
+      <div class="container">
+        <a class="navbar-brand" href="#"><span class="btn btn-primary">News</span> Daily</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active fw-semibold" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Life & Living</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Blog</a>
+            </li>
+          </ul>
         </div>
-        </section>
+      </div>
+    </nav>
+  </header>
 
-        <!-- Sort By View -->
-        <section class="mb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                       <div class="d-flex gap-4 align-items-center">
-                        <span class="fw-semibold">Sort By View:</span> <select style="width: 130px ;" class="form-select" aria-label="Default select example">
-                            <option selected>Default</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                       </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="text-end">
-                            <button class="btn btn-primary">Today’s Pick</button>
-                            <button class="btn border border-primary text-primary">Trending</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- category deatails -->
-        <section>
-            <div id="all-Category"  class="container">
-               
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-white">
+  <main class="pb-5">
+    <!-- category secation -->
+    <section>
+      <nav class="navbar navbar-expand-lg bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-4 mb-0 text-center fw-semibold text-secondary">Copyright 2022 News Daily</p>
-                </div>
-            </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+            <ul id="Category-container" class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            </ul>
+          </div>
         </div>
-    </footer>
+      </nav>
+    </section>
 
+    <!-- category Entertainment -->
+    <section class="mb-5">
 
-
-
-
-  
-  <!-- Modal -->
-  <div class="modal fade" id="NewsDetailModal" tabindex="-1" aria-labelledby="NewsDetailModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div id="modal-header-container" class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">News detail</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div id="modal-container" class="modal-body">
-          
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="bg-white rounded-1 p-3 ">
+              <p class="mb-0 fw-semibold"><span id="category-items"></span> items found for category Entertainment</p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Sort By View -->
+    <section class="mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="d-flex gap-4 align-items-center">
+              <span class="fw-semibold">Sort By View:</span> <select style="width: 130px ;" class="form-select"
+                aria-label="Default select example">
+                <option selected>Default</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="text-end">
+              <button class="btn btn-primary">Today’s Pick</button>
+              <button class="btn border border-primary text-primary">Trending</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- category deatails -->
+    <section>
+      <div id="all-Category" class="container">
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="p-4 mb-0 text-center fw-semibold text-secondary">Copyright 2022 News Daily</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="NewsDetailModal" tabindex="-1" aria-labelledby="NewsDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div id="modal-header-container" class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">News detail</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="modal-container" class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
 
-    
 
 
-    <!-- bootstrap cdn -->
-    <script src="bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+
+  <!-- bootstrap cdn -->
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
