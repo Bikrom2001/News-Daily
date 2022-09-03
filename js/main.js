@@ -3,10 +3,11 @@ const loadData = () => {
   fetch(url)
     .then(res => res.json())
     .then(data => displayLoadData(data.data.news_category))
+    .catch(error => console.log(error));
 }
 
 const displayLoadData = categorys => {
-  
+
   const categoryContainer = document.getElementById('Category-container');
   categorys.forEach(category => {
     // console.log(category);
@@ -18,7 +19,7 @@ const displayLoadData = categorys => {
         `;
     categoryContainer.appendChild(licategory);
   })
- 
+
 }
 
 
@@ -27,6 +28,7 @@ const loadAllCategory = categoryId => {
   fetch(url)
     .then(res => res.json())
     .then(data => displayLoadCategory(data.data))
+    .catch(error => console.log(error));
 }
 
 const displayLoadCategory = CategoryData => {
@@ -98,6 +100,7 @@ const loadModalData = NewsDetailId => {
   fetch(url)
     .then(res => res.json())
     .then(data => modalNewsDetail(data.data[0]))
+    .catch(error => console.log(error));
 }
 
 const modalNewsDetail = (NewsDetails) => {
@@ -129,10 +132,10 @@ const modalNewsDetail = (NewsDetails) => {
 // spinner loader
 const toggleSpinner = isloading => {
   const spinnerLoaderSecation = document.getElementById('spinner-loader');
-  if(isloading){
+  if (isloading) {
     spinnerLoaderSecation.classList.remove('d-none');
   }
-  else{
+  else {
     spinnerLoaderSecation.classList.add('d-none');
   }
 }
