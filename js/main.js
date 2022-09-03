@@ -1,40 +1,43 @@
 const loadData = () => {
-    const url = `https://openapi.programming-hero.com/api/news/categories`
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displayLoadData(data.data.news_category))
+  const url = `https://openapi.programming-hero.com/api/news/categories`
+  fetch(url)
+    .then(res => res.json())
+    .then(data => displayLoadData(data.data.news_category))
 }
 
 const displayLoadData = categorys => {
-    const categoryContainer = document.getElementById('Category-container');
-    categorys.forEach(category => {
-        // console.log(category);
-        const licategory = document.createElement('li');
-        licategory.classList.add('nav-item');
-        licategory.innerHTML = `
+  const categoryContainer = document.getElementById('Category-container');
+  categorys.forEach(category => {
+    // console.log(category);
+    const licategory = document.createElement('li');
+    licategory.classList.add('nav-item');
+    licategory.innerHTML = `
         
         <a onclick="loadAllCategory('${category.category_id}')" class="nav-link active" aria-current="page" href="#">${category.category_name}</a>
         `;
-        categoryContainer.appendChild(licategory);
-    })
+    categoryContainer.appendChild(licategory);
+  })
 }
 
 
 const loadAllCategory = categoryId => {
-    const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displayLoadCategory(data.data))
+  const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`
+  fetch(url)
+    .then(res => res.json())
+    .then(data => displayLoadCategory(data.data))
 }
 
 const displayLoadCategory = CategoryData => {
-    const allCategoryContainer = document.getElementById('all-Category');
-    allCategoryContainer.innerHTML = ``;
-    CategoryData.forEach(allCategory => {
-        // console.log(allCategory);
-        const cardDiv = document.createElement('div');
-        cardDiv.classList.add('card', 'mb-3', 'shadow-sm');
-        cardDiv.innerHTML = `
+  const allCategoryContainer = document.getElementById('all-Category');
+  allCategoryContainer.innerHTML = ``;
+  const categoryItems = document.getElementById('category-items');
+  categoryItems.innerText = '';
+  categoryItems.innerText = `${CategoryData.length}`;
+  CategoryData.forEach(allCategory => {
+    // console.log(allCategory);
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('card', 'mb-3', 'shadow-sm');
+    cardDiv.innerHTML = `
         
         <div class="row g-0">
           <div class="col-md-3">
@@ -80,26 +83,26 @@ const displayLoadCategory = CategoryData => {
         </div>
         
         `;
-        allCategoryContainer.appendChild(cardDiv);
-    })
+    allCategoryContainer.appendChild(cardDiv);
+  })
 }
 
 
 const loadModalData = NewsDetailId => {
-    const url = `https://openapi.programming-hero.com/api/news/${NewsDetailId}`;
-    fetch(url)
+  const url = `https://openapi.programming-hero.com/api/news/${NewsDetailId}`;
+  fetch(url)
     .then(res => res.json())
     .then(data => modalNewsDetail(data.data[0]))
 }
 
 const modalNewsDetail = (NewsDetails) => {
-    console.log(NewsDetails);
+  console.log(NewsDetails);
 
-    const NewsDetailContainer = document.getElementById('modal-container');
-    NewsDetailContainer.innerHTML = ``;
-    const newsDetailDiv = document.createElement('div');
-    newsDetailDiv.classList.add('col');
-    newsDetailDiv.innerHTML = `
+  const NewsDetailContainer = document.getElementById('modal-container');
+  NewsDetailContainer.innerHTML = ``;
+  const newsDetailDiv = document.createElement('div');
+  newsDetailDiv.classList.add('col');
+  newsDetailDiv.innerHTML = `
 
     <div class="card">
       <img src="${NewsDetails.image_url}" class="card-img-top" alt="...">
@@ -114,7 +117,7 @@ const modalNewsDetail = (NewsDetails) => {
     </div>
     
     `;
-    NewsDetailContainer.appendChild(newsDetailDiv);
+  NewsDetailContainer.appendChild(newsDetailDiv);
 
 }
 
