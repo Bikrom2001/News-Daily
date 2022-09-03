@@ -6,6 +6,7 @@ const loadData = () => {
 }
 
 const displayLoadData = categorys => {
+  
   const categoryContainer = document.getElementById('Category-container');
   categorys.forEach(category => {
     // console.log(category);
@@ -13,10 +14,11 @@ const displayLoadData = categorys => {
     licategory.classList.add('nav-item');
     licategory.innerHTML = `
         
-        <a onclick="loadAllCategory('${category.category_id}')" class="nav-link text-secondary fw-semibold" aria-current="page" href="#">${category.category_name}</a>
+        <a onclick="loadAllCategory('${category.category_id}',toggleSpinner(true))" class="nav-link text-secondary fw-semibold" aria-current="page" href="#">${category.category_name}</a>
         `;
     categoryContainer.appendChild(licategory);
   })
+ 
 }
 
 
@@ -85,6 +87,9 @@ const displayLoadCategory = CategoryData => {
         `;
     allCategoryContainer.appendChild(cardDiv);
   })
+  // stop sipnnier loader
+  toggleSpinner(false);
+
 }
 
 
@@ -119,6 +124,17 @@ const modalNewsDetail = (NewsDetails) => {
     `;
   NewsDetailContainer.appendChild(newsDetailDiv);
 
+}
+
+// spinner loader
+const toggleSpinner = isloading => {
+  const spinnerLoaderSecation = document.getElementById('spinner-loader');
+  if(isloading){
+    spinnerLoaderSecation.classList.remove('d-none');
+  }
+  else{
+    spinnerLoaderSecation.classList.add('d-none');
+  }
 }
 
 loadData();
