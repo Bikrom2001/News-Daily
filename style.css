@@ -7,10 +7,6 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
-.nav-link {
-    padding-right: 30px;
-}
-
 .navbar {
     --bs-navbar-nav-link-padding-x: 25px;
 }

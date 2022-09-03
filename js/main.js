@@ -126,6 +126,7 @@ const modalNewsDetail = (NewsDetails) => {
       <div class="card-footer">
           <small class=" fw-semibold text-black">${NewsDetails.author.name ? NewsDetails.author.name : "Not Found Author"}</small>
           <small class="text-muted text-end"> / ${NewsDetails.author.published_date ? NewsDetails.author.published_date : 'Not Found Date'}</small>
+          <small class="fw-semibold text-black text-end"> / ${NewsDetails.rating.number ? NewsDetails.rating.number : 'Not Found Date'} <i class="fa-regular fa-star-half-stroke"></i></small>
         </div>
     </div>
     
