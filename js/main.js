@@ -113,7 +113,7 @@ const modalNewsDetail = (NewsDetails) => {
       <img src="${NewsDetails.image_url}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${NewsDetails.title}</h5>
-        <p class="card-text text-secondary">${NewsDetails.details ? NewsDetails.details.slice(0, 135) : '...'}</p>
+        <p class="card-text text-secondary">${NewsDetails.details ? NewsDetails.details.slice(0, 135) : '...'}...</p>
       </div>
       <div class="card-footer">
           <small class=" fw-semibold text-black">${NewsDetails.author.name ? NewsDetails.author.name : "Not Found Author"}</small>
